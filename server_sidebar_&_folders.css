@@ -1,0 +1,176 @@
+
+/* actual code ==========================================================*/
+
+/* servers sidebar */.wrapper-1_HaEi.guilds-2JjMmN[aria-label="Servers sidebar"]{
+background-color: var(--server-sidebar-bg-color) !important;
+opacity: var(--server-sidebar-opacity);
+transition-duration: 400ms;
+width: var(--server-sidebar-width);
+}
+/* servers sidebar :hover */.wrapper-1_HaEi.guilds-2JjMmN[aria-label="Servers sidebar"]:hover{
+opacity: var(--server-sidebar-opacity-hover);
+transition-duration: 400ms;
+width: var(--server-sidebar-width-hover);
+}
+/* ind. servers backing */.listItem-3SmSlK{    
+background-color: var(--server-backing-color) !important;
+border-radius: var(--server-backing-border-radius);
+border-width: var(--server-backing-border-width);
+border-color: var(--server-backing-border-color);
+border-style: var(--server-backing-border-style);
+
+width: calc(0.8 * var(--server-sidebar-width-hover));
+position: relative;
+margin-left: calc(var(--server-sidebar-margin) * var(--server-sidebar-width-hover));
+opacity: 1.0;
+margin-top: var(--server-sidebar-spacing);
+margin-bottom: var(--server-sidebar-spacing);
+transition-duration: 100ms;
+}
+/* ind. servers backing :hover */.listItem-3SmSlK:hover {  
+background-color: var(--server-backing-color-hover) !important;
+border-radius: var(--server-backing-border-radius-hover);
+border-width: var(--server-backing-border-width);
+border-color: var(--server-backing-border-color);
+border-style: var(--server-backing-border-style);
+
+width: calc(0.8 * var(--server-sidebar-width-hover));
+position: relative;
+margin-left: calc(var(--server-sidebar-margin-hover) * var(--server-sidebar-width-hover));
+margin-top: var(--server-sidebar-spacing);
+margin-bottom: var(--server-sidebar-spacing);
+opacity: 1.0;
+transition-duration: 100ms;
+}
+/* server shape */.listItemWrapper-3d87LP, div[draggable="true"]{
+mask: none !important;
+border-radius: var(--server-radius);
+overflow: visible;   
+margin: var(--server-sidebar-spacing);
+width: var(--server-dimensions);
+height: var(--server-dimensions);
+}
+/* server image */.wrapper-2PSQCG, .svg-2ifYOU{
+border-radius: var(--server-radius);
+mask: none !important;
+background-color: var(--server-bg-color);
+width: var(--server-dimensions);
+height: var(--server-dimensions);
+}
+
+
+/* pills */.pill-2RsI5Q{
+background-color: transparent;
+height: calc(var(--server-dimensions)*1.25) !important;
+width: calc(1 * var(--server-sidebar-width-hover));
+position: absolute;
+border-radius: 0px;
+margin-top: var(--server-sidebar-spacing);
+margin-bottom: var(--server-sidebar-spacing);
+margin-left: calc(-0.1 * var(--server-sidebar-width-hover));
+}
+/* pills (indicators) */.item-2LIpTv {
+position: relative;
+background-color: var(--pill-indicator-color);
+height: calc(0.1 * var(--server-sidebar-width-hover)) !important;
+width: calc(0.1 * var(--server-sidebar-width-hover)) !important;
+border-radius: var(--pill-indicator-radius);
+margin-left: calc(.75 * var(--server-sidebar-width-hover));
+transition: linear;
+transition-duration: .001ms;
+top: -10%
+}
+
+
+/* folder shape */.folderIconWrapper-1oRIZr {
+background-color: var(--folder-bg-color) !important;
+border-radius: 0px;
+margin-top: var(--server-sidebar-spacing);
+margin-bottom: var(--server-sidebar-spacing);
+}
+/* closed folder */.wrapper-2PSQCG:has([class*="folderIconWrapper"]){
+background-color: var(--folder-bg-color) !important;
+width: var(--server-dimensions);
+height: var(--server-dimensions);
+border-radius: 0px;
+transition: linear;
+transition-duration: 100ms;
+position: center;
+}
+/* closed folder icon */.folderIconWrapper-1oRIZr:not([style=""])::after {
+position: absolute;
+content: "";
+width: 18px;
+height: 18px;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+margin: auto;
+background-color: var(--folder-bg-color);
+background-image: var(--closed-folder-icon);
+background-attachment: fixed;
+background-size: 100%;
+transform: var(--closed-folder-icon-transform-size);
+filter: var(--folder-icon-brightness-saturation);
+transition-duration: 100ms;
+}
+/* closed folder icon rotation */.folderIconWrapper-1oRIZr:not([style=""]):hover::after {
+rotate: var(--folder-icon-rotation);
+background-color: var(--folder-bg-color-hover);
+}
+/* open folder */.wrapper-2PSQCG:has([class*="expandedFolderIconWrapper"]), .wrapper-2PSQCG:has([class*="folderIconWrapper"]):hover{
+background-color: var(--folder-bg-color) !important;
+width: var(--server-dimensions);
+height: var(--server-dimensions);
+border-radius: 0px;
+transition: linear;
+transition-duration: 100ms;
+}
+/* open folder icon */.folderIconWrapper-1oRIZr[style=""]::after {
+position: absolute;
+content: "";
+width: 18px;
+height: 18px;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+margin: auto;
+background-color: var(--folder-bg-color);
+background-image: var(--open-folder-icon);
+background-attachment: fixed;
+background-size: 100%;
+transform: var(--open-folder-icon-transform-size);
+filter: var(--folder-icon-brightness-saturation);
+transition-duration: 100ms;
+}
+/* open folder icon rotation */.folderIconWrapper-1oRIZr[style=""]:hover::after {
+rotate: var(--folder-icon-rotation);
+background-color: var(--folder-bg-color-hover);
+}
+
+
+
+
+/* removing shit ==========================================================*/
+
+
+/* removes annoying block thingy */
+[class*="folder"] {
+background-color: transparent !important;
+}
+
+/* (removes) folder sidebar */.expandedFolderBackground-1kSAf6{
+display: none;
+}
+/* (removes) pill wrappers */.listItem-3SmSlK:has([class="folderIconWrapper-1oRIZr"]) .wrapper-z5ab_q, .listItem-3SmSlK:has([class="homeIcon-r0w4ny"]) .wrapper-z5ab_q{
+display: none;
+}
+/* (removes) folder masks */foreignObject[width="48"]{
+border-radius: 0px !important; 
+mask: none !important;
+}
+/* (removes) folder icons */.expandedFolderIconWrapper-3RwQpD svg, .closedFolderIconWrapper-3tRb2d{
+display: none;
+}
