@@ -1,0 +1,14 @@
+
+/* avatar customization doesn't affect the pfps/avatars that pop up in the servers bar when someone messages you. all other avatars should be affected by this code. */
+
+.avatar-2e8lTP.clickable-31pE3P,foreignObject[mask*="svg-mask-avatar"], foreignObject[mask*="#:r"]{
+mask: none;
+border-radius: var(--avatar-border-radius);
+border-width: var(--avatar-border-width);
+border-color: var(--avatar-border-color);
+border-style: var(--avatar-border-style);
+background-color: var(--avatar-bg-color);
+
+margin-top: calc(var(--avatar-border-width)+5px);
+margin-bottom: calc(var(--avatar-border-width)+5px);
+}
